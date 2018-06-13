@@ -19,7 +19,7 @@ class Fond extends Model
      * @var string
      */
     protected $primaryKey = 'idFond';
-    public $timestamps = false;
+    //public $timestamps = false;
 
 
     /**

@@ -15,18 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/listeAdherents','NewAdherentController@index');
-Route::get('/listAdherents','NewAdherentController@index2');
-Route::get('/emprunts', function(){
-        return view('emprunts');
-});
-Route::get('/repartition', function(){
-    return view('repartition');
-});
-Route::get('/adherentsdef', function(){
-    return view('AdherentsDefaillants');
-});
-
 /***New Routes */
 Route::resource('adherent','NewAdherentController');
 Route::resource('part','PartsController');
@@ -44,12 +32,25 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 });
 
 /**Routes de connexion */
-Route::post('/login', 'LoginController@login');
- Route::get('/logout','LoginController@logout');
-Route::group(['middleware' => 'admin'], function(){
+Route::group(['middleware' => 'web'], function(){
     Route::auth();
     Route::get('/', function () {
         return view('index');
+    });
+    Route::post('/login', 'LoginController@login');
+    Route::get('/logout','LoginController@logout');
+});
+
+ 
+Route::group(['middleware' => 'admin'], function(){
+    Route::get('/listeAdherents','NewAdherentController@index');
+    Route::get('/listAdherents','NewAdherentController@index2');
+    Route::get('/emprunts', function(){
+        return view('emprunts');
+        });
+    Route::get('/repartition', 'RepartitionController@index');
+    Route::get('/adherentsdef', function(){
+        return view('AdherentsDefaillants');
     });
     Route::post('/adherent/{matricule}/souscription', 'PartsController@store')->name('parts.souscription');
     Route::post('/adherent/inscription', 'NewAdherentController@store')->name('inscription');
