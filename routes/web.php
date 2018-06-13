@@ -44,15 +44,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function(){
 });
 
 /**Routes de connexion */
-Route::group(['middleware' => 'web'], function(){
+Route::post('/login', 'LoginController@login');
+ Route::get('/logout','LoginController@logout');
+Route::group(['middleware' => 'admin'], function(){
     Route::auth();
     Route::get('/', function () {
         return view('index');
     });
-
-    Route::post('/login', 'LoginController@login');
-    Route::get('/logout','LoginController@logout');
-    Route::post('/adherent/{id ?}/souscription', 'PartsController@store')->name('parts.souscription');
-    Route::post('/adherent/{matricule}/souscription','PartsController@store');
+    Route::post('/adherent/{matricule}/souscription', 'PartsController@store')->name('parts.souscription');
     Route::post('/adherent/inscription', 'NewAdherentController@store')->name('inscription');
 });
+
