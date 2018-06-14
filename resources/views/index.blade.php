@@ -1,6 +1,13 @@
 @section('other_css')
 @stop
 
+@section('menu')
+    <li><a href="index.html" class="active scroll">Accueil</a></li>
+    <li><a href="#about" class="scroll">A propos de nous</a></li>
+    <li><a href="#services" class="scroll">Nos Services</a></li>
+    <li><a href="#contact" class="scroll">Nos Contacts</a></li>
+@stop
+
 @extends('layouts.homeMaster')
 
 @section('icon_header')

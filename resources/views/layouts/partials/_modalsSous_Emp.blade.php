@@ -108,35 +108,35 @@
                             </div>
                             <br>
                             <br>
-                            <h5 style="text-align: left">Etape 2:</h5>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h6>Methode de paiemnet : </h6>
-                                </div>
-                                <div class="col-md-8">
-                                    <select name="modeP" id="modeP">
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                        <option value="visa">VISA</option>
-                                    </select>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <h6>Veuillez entrer votre code : </h6>
-                                <div class="row">
-                                    <div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>
-                                    <div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>
-                                    <div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>
-                                    <div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>
-                                </div>
-                            </div>
+                            {{--<h5 style="text-align: left">Etape 2:</h5>--}}
+                            {{--<hr>--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-4">--}}
+                                    {{--<h6>Methode de paiemnet : </h6>--}}
+                                {{--</div>--}}
+                                {{--<div class="col-md-8">--}}
+                                    {{--<select name="modeP" id="modeP">--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                        {{--<option value="visa">VISA</option>--}}
+                                    {{--</select>--}}
+                                {{--</div>--}}
+                                {{--<br>--}}
+                                {{--<br>--}}
+                                {{--<br>--}}
+                                {{--<h6>Veuillez entrer votre code : </h6>--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>--}}
+                                    {{--<div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>--}}
+                                    {{--<div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>--}}
+                                    {{--<div class="col-md-3 signin-form"><input type="text" placeholder="0000"></div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                                 <button type="submit" class="btn btn-primary" >Enregistrer</button>

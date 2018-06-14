@@ -1,5 +1,12 @@
 @extends('layouts.afterConnectionMaster')
 
+@section('menu')
+    <li><a href="index.html" class="active scroll">Accueil</a></li>
+    <li><a href="#about" class="scroll">A propos de nous</a></li>
+    <li><a href="#services" class="scroll">Nos Services</a></li>
+    <li><a href="#contact" class="scroll">Nos Contacts</a></li>
+@stop
+
 @section('content')
     <div class="row page-titles" style="margin-top: 20px; margin-left: 20px;">
         <div class="col-md-5 col-8 align-self-center">

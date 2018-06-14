@@ -1,5 +1,5 @@
 <?php
-
+use App\Adherent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +11,19 @@
 |
 */
 
+Route::get('/actionnaire', function (){
+    $adherents = Adherent::all();
+    return view('actionnaire', compact('adherents'));
+});
+
 Route::get('/', function () {
     return view('index');
 });
 
 Route::get('/listeAdherents','NewAdherentController@index');
+
 Route::get('/listAdherents','NewAdherentController@index2');
+
 Route::get('/emprunts', function(){
         return view('emprunts');
 });

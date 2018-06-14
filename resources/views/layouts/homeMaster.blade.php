@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
     <head>
-        <title>Smart Career a Banking Category Bootstrap responsive Website Template  | Home :: W3layouts</title>
+        <title>Credit Association</title>
         <!-- Meta-Tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

@@ -23,10 +23,8 @@
             <div class="collapse navbar-collapse cl-effect-13" id="bs-example-navbar-collapse-1">
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html" class="active scroll">Accueil</a></li>
-                    <li><a href="#about" class="scroll">A propos de nous</a></li>
-                    <li><a href="#services" class="scroll">Nos Services</a></li>
-                    <li><a href="#contact" class="scroll">Nos Contacts</a></li>
+                    @yield('menu')
+
                     @yield('other_menu')
                 </ul>
             </div>
