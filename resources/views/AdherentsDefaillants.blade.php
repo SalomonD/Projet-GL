@@ -23,34 +23,31 @@
                                 <th class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Nom: activate to sort column descending" aria-sort="ascending" style="width: 600px;">
                                     Nom
                                 </th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Nom: activate to sort column descending" aria-sort="ascending" style="width: 600px;">
+                                    Prénom
+                                </th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="myTable" rowspan="1" colspan="1" aria-label="Nom: activate to sort column descending" aria-sort="ascending" style="width: 600px;">
+                                    NuméroCni
+                                </th>
                                 <th class="sorting" tabindex="0" aria-controls="myTable" rowspan="1" colspan="2" aria-label="Date: activate to sort column ascending" style="width: 50px;">
                                     Decision
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            @include('layouts.partials._modalsExc_Susp')
-                            <?php $noms = ['Airi Satou',
-                                'Angelica Ramos',
-                                'Ashton Cox',
-                                'Bradley Greer',
-                                'Brenden Wagner',
-                                'Brielle Williamson',
-                                'Bruno Nash',
-                                'Caesar Vance',
-                                'Cara Stevens',
-                                'Cedric Kelly',]?>
-
-                            @foreach($noms as $nom)
+                            @foreach($adDef as $ad)
                                 <tr role="row" class="odd">
-                                    <td class="sorting_1">{{$nom}}</td>
+                                    <td class="sorting_1">{{$ad->nom}}</td>
+                                    <td class="sorting_1">{{$ad->prenom}}</td>
+                                    <td class="sorting_1">{{$ad->numcni}}</td>
                                     <td>
-                                        <div class="btn btn-info" alt="default" data-toggle="modal" data-target="#myModal1">Suspendre</div>
+                                        <div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}">Suspendre</div>
                                     </td>
                                     <td>
-                                        <div class="btn btn-info" alt="default" data-toggle="modal" data-target="#myModal2">Exclure</div>
+                                        <div class="btn btn-info" alt="default" data-toggle="modal" data-target="#modal2">Exclure</div>
                                     </td>
                                 </tr>
+                                @include('layouts.partials._modalsExc_Susp')
                             @endforeach
                             </tbody>
                         </table>

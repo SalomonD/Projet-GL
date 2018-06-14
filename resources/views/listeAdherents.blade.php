@@ -37,9 +37,9 @@
                                 <tr role="row" class="odd" id="">
                                     <td class="sorting_1">{{$ad['nom']}}</td>
                                     <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#myModal4">Faire Emprunt</div></td>
-                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}" onclick = "modal():">Faire Souscription</div></td>
+                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}" onclick = "">Faire Souscription</div></td>
                                     @include('layouts.partials._modalsSous_Emp')
-                                    <td><div class="btn btn-info">Activer</div>
+                                    <td><a href="{{action('NewAdherentController@edit', $ad['matricule'])}}" class="btn btn-info"  id = "activer">@if($ad->etat==0) Activer @else Désactiver @endif</a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -44,7 +44,7 @@ Route::group(['middleware' => 'web'], function(){
  
 Route::group(['middleware' => 'admin'], function(){
     Route::get('/listeAdherents','NewAdherentController@index');
-    Route::get('/listAdherents','NewAdherentController@index2');
+    Route::get('/AdherentsDefaillants','NewAdherentController@adhDef');
     Route::get('/emprunts', function(){
         return view('emprunts');
         });
