@@ -36,7 +36,7 @@ class NewAdherentController extends Controller
      */
     public function index()
     {
-        $adherents = Adherent::all();
+        $adherents = Adherent::where('etat','<','2')->get();
         return view('listeAdherents',compact('adherents'));
     }
 
@@ -51,9 +51,15 @@ class NewAdherentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //return view('newAdherent');
+        $ad=Adherent::find($id);
+            if($ad->etat==3){
+                $ad->etat = 4;/**Suspension de l'adhérent */
+                $ad->save();
+            }
+            
+        return back();
     }
 
     /**
@@ -119,7 +125,16 @@ class NewAdherentController extends Controller
      */
     public function show($id)
     {
-        //
+        $ad=Adherent::find($id);
+      
+            $ad->etat = 3;/**Suspension de l'adhérent */
+            $ad->save();
+        return back();
+    }
+
+    public function exclude($id)
+    {
+        
     }
 
     /**
@@ -130,7 +145,16 @@ class NewAdherentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $ad = Adherent::find($id);
+        if($ad->etat==0){
+            $ad->etat = 1;
+        }else {
+            if($ad->etat==1){
+                $ad->etat=0;
+            }
+        }  
+        $ad->save();
+        return  back();
     }
 
     /**
@@ -154,5 +178,21 @@ class NewAdherentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**Activer un adhérent */
+    public function activer($mat){
+       
+    }
+
+    /**Lister les adhérents défaillants */
+    public function adhDef(){
+        $adDef=Adherent::where('etat','>','1')->get();
+        return view('AdherentsDefaillants',compact('adDef'));
+    }
+
+    /**Suspension ou exclusion d'un adhérent */
+    public function action($matricule,$act){
+       
     }
 }

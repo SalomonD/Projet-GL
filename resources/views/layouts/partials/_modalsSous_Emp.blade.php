@@ -30,7 +30,7 @@
                     <div class="signin-form profile">
                     <h3 class="agileinfo_sign">Souscription</h3>
                     <div class="login-form">
-                        <form method="post" action="{{url('adherent/'.$ad->matricule.'/souscription')}}"  enctype="multipart/form-data">
+                        <form method="post" action="{{route('parts.souscription',$ad['matricule'])}}"  enctype="multipart/form-data">
                         {{csrf_field()}}
                             <h5 style="text-align: left">Etape 1:</h5>
                             <hr>

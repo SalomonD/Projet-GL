@@ -22,7 +22,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title">Interet Global: <span style="font-size: 30px">1 200 000 FCFA</span></div>
+                    <div class="card-title">Interet Global: <span style="font-size: 30px">{{$solde1[0]->soldeEnCours}} FCFA</span></div>
+                    <div class="card-title">Solde En Cours: <span style="font-size: 30px" id="solde">{{$fond}} FCFA</span></div>
                     <div class="row" style="float: right;">
                         <div class="signin-form">
                             <input type="text" placeholder="Search">
@@ -41,7 +42,7 @@
                             </thead>
                             <tbody>
 
-                            @include('layouts.partials._modalsSous_Emp')
+                           
 
                             @include('layouts.partials._modalsExc_Susp')
                             <?php $noms = [

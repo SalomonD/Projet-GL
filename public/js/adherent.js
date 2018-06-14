@@ -87,8 +87,8 @@ compte_a_rebours();
 
 function modal(){
     alert('Dans la fonction');
-    $('.montantSous').on('input',function(e){
-        $('.parts').html($('.montantSous').val());
+    $('.activer').on('click',function(e){
+        $('#activer').html($('Desactiver'));
     });
 }
 

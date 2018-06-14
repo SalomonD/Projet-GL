@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Actionnaire;
 
 class isActionnaire
 {
@@ -15,6 +16,9 @@ class isActionnaire
      */
     public function handle($request, Closure $next)
     {
+       if(Actionnaire::find($request->matricule)==null){
+           return redirect('index');
+       }
         return $next($request);
     }
 }

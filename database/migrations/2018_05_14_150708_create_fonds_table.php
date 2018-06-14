@@ -17,7 +17,6 @@ class CreateFondsTable extends Migration {
 			$table->increments('idFond');
 			$table->decimal('soldeInitial', 8, 0);
 			$table->decimal('soldeEnCours', 8, 0);
-			$table->timestamps();
 		});
 	}
 
