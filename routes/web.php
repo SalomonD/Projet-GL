@@ -52,7 +52,12 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::post('/login', 'LoginController@login');
     Route::get('/logout','LoginController@logout');
+
     Route::post('/adherent/{id ?}/souscription', 'PartsController@store')->name('parts.souscription');
     Route::post('/adherent/{matricule}/souscription','PartsController@store');
+
+    Route::post('/adherent/{id ?}/effectuerEmprunt', 'EmpruntsController@store')->name('emprunts.effectuerEmprunt');
+    Route::post('/adherent/{matricule}/effectuerEmprunt','EmpruntsController@verification');
+
     Route::post('/adherent/inscription', 'NewAdherentController@store')->name('inscription');
 });

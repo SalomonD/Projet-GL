@@ -1,4 +1,4 @@
-<div class="modal fade" id="{{$mat}}" tabindex="-1" role="dialog">
+<div class="modal fade" id="modal4" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">

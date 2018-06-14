@@ -12,7 +12,9 @@ use App\Retour;
 use Illuminate\Http\Request;
 use App\Adherent;
 use App\Emprunt;
+use Illuminate\Support\Facades\DB;
 use Validator;
+use App\Fond;
 use DateTime;
 
 class EmpruntsController
@@ -46,7 +48,7 @@ class EmpruntsController
      * On verifie juste qu'il est elligible pour un emprunt
      */
     public function isInEmprunt($matricule){
-        if (Adherent::find($matricule)->where('etat', '1') == null){
+        if (Adherent::find($matricule)->where('etat', '=', '1') == null){
             return false;
         }else{
             return true;
@@ -78,9 +80,19 @@ class EmpruntsController
 
 
         if($this->isInEmprunt($matricule)){
-            if ($this->empruntEstPossible()){
+
+            if ($this->empruntEstPossible($request->get('montant'))){
+
                 $emprunt->idFond = $this->updateFond($emprunt->montantEmprunt);
-                $emprunt->save();
+//                DB::insert();
+//                dd($emprunt);
+                $montantARembourser = $emprunt->montantEmprunt + 0.1*$emprunt->montantEmprunt;
+
+                $id = Emprunt::OrderBy('idEmprunt', 'desc')->first();
+
+                DB::insert('INSERT INTO emprunt (matricule, montantEmprunt,  montantARembourse, dateEmprunt,  idFond) VALUES (:mat, :montE, :monR, :date, :idFond)',
+                    [$matricule, $emprunt->montantEmprunt, $montantARembourser, $date, $emprunt->idFond]);
+//                $emprunt->save();
             }
         }
         return back();

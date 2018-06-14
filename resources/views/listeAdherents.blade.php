@@ -15,7 +15,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title" style="margin-bottom: 20px;"><div class="btn btn-danger"><i class="fa fa-plus-circle"></i> Ajouter Adherent</div></div>
+                    {{--<div class="card-title" style="margin-bottom: 20px;"><div class="btn btn-danger"><i class="fa fa-plus-circle"></i> Ajouter Adherent</div></div>--}}
                     <div class="row" style="float: right;">
                         <div class="signin-form">
                             <input type="text" placeholder="Search">
@@ -31,18 +31,17 @@
                             </thead>
                             <tbody>
 
-                            @include('layouts.partials._modalsExc_Susp')
 
-                            @foreach($adherents as $ad)
-                                <tr role="row" class="odd" id="">
-                                    <td class="sorting_1">{{$ad['nom']}}</td>
-                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#myModal4">Faire Emprunt</div></td>
-                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}" onclick = "modal():">Faire Souscription</div></td>
-                                    @include('layouts.partials._modalsSous_Emp')
-                                    <td><div class="btn btn-info">Activer</div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                @foreach($adherents as $ad)
+                                    <tr role="row" class="odd" id="">
+                                        <td class="sorting_1">{{$ad['nom']}}</td>
+                                        <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#modal4">Faire Emprunt</div></td>
+                                        <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}">Faire Souscription</div></td>
+                                        @include('layouts.partials._modalsSous_Emp')
+                                        <td><div class="btn btn-info">Activer</div>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
     <div class="modal-dialog modal-sm">
         <!-- Modal content-->
         <div class="modal-content">
