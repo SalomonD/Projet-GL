@@ -45,8 +45,10 @@
                                     <td class="sorting_1">{{$ad['prenom']}}</td>
                                     <td class="sorting_1">{{$ad['numCni']}}</td>
                                     <td class="sorting_1">{{$ad['telephone']}}</td>
-                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#myModal4">Faire Emprunt</div></td>
-                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}" onclick = "modal():">Faire Souscription</div></td>
+
+                                    <?php $mat = $ad['matricule'] + 1?>
+                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$mat}}">Faire Emprunt</div></td>
+                                    <td><div class="btn btn-info" alt="default" data-toggle="modal" data-target="#{{$ad['matricule']}}" onclick = "modal()">Faire Souscription</div></td>
                                     @include('layouts.partials._modalsSous_Emp')
                                     <td><div class="btn btn-info">Activer</div>
                                     </td>

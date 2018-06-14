@@ -24,9 +24,11 @@ Route::get('/listeAdherents','NewAdherentController@index');
 
 Route::get('/listAdherents','NewAdherentController@index2');
 
-Route::get('/emprunts', function(){
-        return view('emprunts');
-});
+Route::get('/emprunts', 'EmprunntsController@listeAdherents');
+
+        $adherents = Adherent::all();
+        return view('emprunts', compact('adherents'));
+
 Route::get('/repartition', function(){
     return view('repartition');
 });
@@ -59,7 +61,16 @@ Route::group(['middleware' => 'web'], function(){
 
     Route::post('/login', 'LoginController@login');
     Route::get('/logout','LoginController@logout');
+
     Route::post('/adherent/{id ?}/souscription', 'PartsController@store')->name('parts.souscription');
     Route::post('/adherent/{matricule}/souscription','PartsController@store');
+
     Route::post('/adherent/inscription', 'NewAdherentController@store')->name('inscription');
+
+    Route::post('/adherent/{id ?}/effectuerEmprunt', 'EmpruntsController@verification')->name('emprunts.effectuerEmp');
+    Route::post('/adherent/{matricule}/effectuerEmprunt','EmpruntsController@verification');
+
+    Route::post('/adherent/{id ?}/reboursement', 'EmpruntsController@reboursement')->name('emprunts.reboursement');
+    Route::post('/adherent/{matricule}/reboursement','EmpruntsController@reboursement');
+
 });

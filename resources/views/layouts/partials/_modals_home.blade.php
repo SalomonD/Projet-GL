@@ -9,8 +9,8 @@
                     <h3 class="agileinfo_sign">Se connecter</h3>
                     <div class="login-form">
                         <form action="/login" method="post">
-                        {{ csrf_field() }} 
-                        <input type="hidden" name="redirurl" value="{{ $_SERVER['REQUEST_URI'] }}">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="redirurl" value="{{ $_SERVER['REQUEST_URI'] }}">
                             <input type="text" name="matricule" placeholder="Matricule"  value="{{old('maricule')}}">
                             <input type="password" name="passwd" placeholder="Mot de passe" >
                             <div class="tp">
@@ -37,8 +37,8 @@
                     <h3 class="agileinfo_sign">S'inscrire</h3>
                     <div class="login-form">
                         <form action="{{route('inscription')}}" method="post">
-                        {{csrf_field()}}
-                        <input type="hidden" name="redirurl"  value="{{ $_SERVER['REQUEST_URI'] }}">
+                            {{csrf_field()}}
+                            <input type="hidden" name="redirurl"  value="{{ $_SERVER['REQUEST_URI'] }}">
                             <input type="text" name="name" placeholder="Nom" required="">
                             <input type="text" name="prename" placeholder="Prénom" required="">
                             <input type="text" name="cni" placeholder="Numero CNI" required="">
